@@ -1,17 +1,26 @@
+import os
 from pathlib import Path
 import csv
 import logging
 from django.core.management.base import BaseCommand
 from core.models import Artist, Album, Track
 
-CURRENT_PATH = Path(__file__).parent
-ARTISTS_CSV = CURRENT_PATH / 'artists.csv'
-ALBUMS_CSV = CURRENT_PATH / 'albums.csv'
-TRACKS_CSV = CURRENT_PATH / 'tracks.csv'
-
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
+
+STAGE = os.environ.get('SOURCE_DATA')
+logger.debug(STAGE)
+if STAGE == 'local':
+    PARENT_PATH = Path(__file__).parent.parent.parent.parent.parent
+else:
+    PARENT_PATH = Path(__file__).parent
+logger.debug('PARENT_PATH: %s' % PARENT_PATH)
+
+SOURCE_DATA_PATH = PARENT_PATH / 'source_data'
+ARTISTS_CSV = SOURCE_DATA_PATH / 'artists.csv'
+ALBUMS_CSV = SOURCE_DATA_PATH / 'albums.csv'
+TRACKS_CSV = SOURCE_DATA_PATH / 'tracks.csv'
 
 
 class Command(BaseCommand):
