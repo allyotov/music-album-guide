@@ -21,6 +21,8 @@ services:
       - postgres
     env_file:
       - .env
+    volumes:
+      - ./source_data:/app/core/management/commands/source_data
     networks:
       - musicalbumguide_network
 
