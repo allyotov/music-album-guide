@@ -1,13 +1,12 @@
-import logging
-
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
-
-from core.models import Album
+from rest_framework.response import Response
+from rest_framework import status
 
 
 from core.serializers import AlbumSerializer
-from core.services import get_album_queryset
+from core.services import get_album_queryset, save_album
+
 
 class AlbumViewSet(ListModelMixin, GenericAPIView):
     serializer_class = AlbumSerializer
@@ -18,3 +17,9 @@ class AlbumViewSet(ListModelMixin, GenericAPIView):
 
     def get(self, request):
         return self.list(request)
+
+    def post(self, request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        save_album(serializer)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
