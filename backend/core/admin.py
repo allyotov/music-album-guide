@@ -4,11 +4,11 @@ from core.models import Artist, Album, Track
 
 
 class ArtistAdmin(admin.ModelAdmin):
-    fields = ('name')
+    fields = ('name',)
 
-    list_display = ('name')
+    list_display = ('name',)
     list_display_links = ('name',)
-    search_fields = ('name')
+    search_fields = ('name',)
     list_filter = ('name',)
 
 
