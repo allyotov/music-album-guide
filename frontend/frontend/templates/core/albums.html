@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Albums Guide</title>
+</head>
+<body>
+    <h1>Музыкальные альбомы</h1>
+</body>
+<table>
+    <tr>
+        <td>album<br>
+            <form action="/main" method="get" name='album_sort_button'>
+            <input type="submit" value="Sort">
+            </form>
+        </td>
+        <td>artist<br>            
+            <form action="/main" method="get" name='artist_sort_button'>
+            <input type="submit" value="Sort">
+            </form></td>
+        <td>tracks</td>
+    </tr>
+    {% for item in albums %}
+    <tr>
+       <td>{{item.name}}</td>
+       <td>{{item.artist.name}}</td>
+       <td>
+           {% for track in item.tracks %}
+           track<br>
+           {% endfor %}
+       </td>
+    </tr>
+    {% endfor %}
+</table>
+</html>
+
