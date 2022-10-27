@@ -21,3 +21,6 @@ rebuild.backend:
 
 volumes.down:
 	docker-compose down -v
+
+populate.db:
+	docker-compose exec backend poetry run python manage.py populate_db
