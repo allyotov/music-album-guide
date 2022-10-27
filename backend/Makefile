@@ -15,6 +15,9 @@ create.superuser:
 runserver:
 	poetry run python manage.py runserver localhost:7000
 
+populate.db:
+	poetry run python manage.py populate_db
+
 shell:
 	poetry run python manage.py shell
 
