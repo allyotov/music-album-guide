@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  postgres-local:
+    image: postgres:15beta3
+    restart: always
+    ports:
+      - "5432:5432"
+    env_file:
+      - .local.env
+

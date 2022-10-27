@@ -9,6 +9,8 @@ python = "^3.9"
 Django = "^4.1.2"
 djangorestframework = "^3.14.0"
 django-filter = "^22.1"
+psycopg2-binary = "^2.9.5"
+drf-yasg = "^1.21.4"
 
 [tool.poetry.dev-dependencies]
 
