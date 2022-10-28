@@ -8,6 +8,7 @@ authors = ["Alexander Lyotov <sippie84@gmail.com>"]
 python = "^3.9"
 Django = "^4.1.2"
 httpx = "^0.23.0"
+djangorestframework = "^3.14.0"
 
 [tool.poetry.dev-dependencies]
 
