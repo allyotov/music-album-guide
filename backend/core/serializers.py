@@ -1,10 +1,18 @@
 from rest_framework import serializers
 
-from core.models import Album, Artist, Track
-
 
 class AlbumSerializer(serializers.Serializer):
+    album = serializers.CharField(required=True)
     name = serializers.CharField(required=True)
-    year = serializers.IntegerField(required=True)
+    tracks = serializers.ListField(required=True)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['artist@name'] = serializers.CharField()
+
+
+class AlbumInputSerializer(serializers.Serializer):
     artist = serializers.CharField(required=True)
+    year = serializers.IntegerField(required=True)
+    name = serializers.CharField(required=True)
     tracks = serializers.ListField(required=True)

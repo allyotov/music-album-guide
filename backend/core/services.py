@@ -1,6 +1,6 @@
 from typing import List
 from core.models import Artist, Album, Track
-from core.serializers import AlbumSerializer
+from core.serializers import AlbumSerializer, AlbumInputSerializer
 
 
 def get_album_queryset(sorting: str = None) -> List[dict]:
@@ -10,7 +10,8 @@ def get_album_queryset(sorting: str = None) -> List[dict]:
         sort_field = 'name'
     for album in Album.objects.order_by(sort_field):
         item = dict()
-        item['artist'] = album.artist.name
+        item['album'] = str(album)
+        item['artist@name'] = album.artist.name
         item['name'] = album.name
         item['year'] = album.year
         item['tracks'] = Track.objects.all().filter(album=album).values_list('name', flat=True)
@@ -19,7 +20,7 @@ def get_album_queryset(sorting: str = None) -> List[dict]:
     return resulting_list
 
 
-def save_album(serializer: AlbumSerializer):
+def save_album(serializer: AlbumInputSerializer):
     data = serializer.validated_data
     name = data['name']
     year = data['year']
