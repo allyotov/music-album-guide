@@ -10,14 +10,16 @@
 <table>
     <tr>
         <td>album<br>
-            <form action="/main" method="get" name='album_sort_button'>
-            <input type="submit" value="Sort">
+            <form method="post">
+                {% csrf_token %}
+                <button name="sort" value="album">SORT!</button>
             </form>
         </td>
         <td>artist<br>            
-            <form action="/main" method="get" name='artist_sort_button'>
-            <input type="submit" value="Sort">
-            </form></td>
+            <form method="post">
+                {% csrf_token %}
+                <button name="sort" value="artist">SORT!</button>
+            </form>
         <td>tracks</td>
     </tr>
     {% for item in albums %}
