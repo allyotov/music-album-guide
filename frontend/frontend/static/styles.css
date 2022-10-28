@@ -28,3 +28,10 @@
     padding: 8px;
     border: 1px solid gray;
 }
+
+.table__error__header{
+    font-size: 20px;
+    text-align: left;
+    background-color: rgb(255, 42, 42);
+    border: 1px solid rgb(24, 24, 24);
+}
