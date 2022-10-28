@@ -1,6 +1,6 @@
-from django.urls import path, re_path
-from core.views import AlbumListFormView
+from django.urls import path
+from core.views import AlbumTableView
 
 urlpatterns = [
-    path('main', AlbumListFormView.as_view(), name='index')
+    path('', AlbumTableView.as_view(), name='index')
 ]
