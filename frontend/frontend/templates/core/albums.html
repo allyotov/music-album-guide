@@ -12,27 +12,30 @@
         <tr class="table__header">
             <th class="table__cell">album</th>
             <th class="table__cell">
-                album<br>
+                name<br>
                 <form method="post">
                     {% csrf_token %}
-                    <button name="sort" value="album">SORT!</button>
+                    <button name="sort" value="album">sort</button>
                 </form></th>
             <th class="table__cell">
-                artist<br>            
+                artist@name<br>            
                 <form method="post">
                     {% csrf_token %}
-                    <button name="sort" value="artist">SORT!</button>
+                    <button name="sort" value="artist">sort</button>
                 </form></th>
             <th class="table__cell">Track</th>
         </tr>
         {% for item in albums %}
         <tr class="table__row">
-            <th class="table__cell">{{item.album}}</th>
-            <th class="table__cell">{{item.name}}</th>
-            <th class="table__cell">{{item.artist.name}}</th>
+            {% for key, value in item.items %}
+                {% if key == "tracks" %}
+                {% else %}
+                    <th class="table__cell">{{value}}</th>
+                {% endif %}
+            {% endfor %}
             <th class="table__cell">
                 {% for track in item.tracks %}
-                    track<br>
+                    {{track}}<br>
                 {% endfor %}
             </th>
         </tr>
