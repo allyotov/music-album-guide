@@ -1,5 +1,5 @@
 # Music Album Guide
-## Сервис, предоставляющий информацию о музыкальных альбомах
+## Справочник по музыкальным альбомам
 
 ### Описание проекта:
 Проект состоит из сервисов фронтенда (Django, drf, httpx), бэкенда (Django, drf) и СУБД PostgreSQL, демонстрирует взаимодействие клиента фронтенда с API бэкенда, на чьей стороне происходит работа с данным, в том числе сортировка запрашиваемых данных.
@@ -58,6 +58,6 @@ make local.db.down
 Далее для запуска нужного сервиса необходимо перейти в соответствующую директорию и использовать таргеты из Makefile'ов в них.
 
 Локально страница фронтенда доступна по адресу
-[a link](http://localhost:7000/index)
+[localhost:7000/index](http://localhost:7000/index)
 
-Backend A.P.I.: [a link](http://localhost:8000/api/v1/albums/?sorting=album)
+Backend A.P.I.: [localhost:8000/api/v1/albums/?sorting=album](http://localhost:8000/api/v1/albums/?sorting=album)
