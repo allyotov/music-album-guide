@@ -12,8 +12,9 @@ class AlbumTableView(View):
     def get(self, request):
         logger.debug(get_albums(sorting='artist'))
         try:
-            return render(request, 'core/albums.html', context={'albums': get_albums(sorting='artist')})
-        except APIException as exc:
+            albums = get_albums(sorting='artist')
+            return render(request, 'core/albums.html', context={'albums': albums})
+        except Exception as exc:
             return render(request, 'core/backend_error.html', context={'exc': exc})
 
     def post(self, request):

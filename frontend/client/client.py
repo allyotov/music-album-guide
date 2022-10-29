@@ -1,6 +1,7 @@
 from typing import Dict, Any
 import httpx
-
+from httpx import ConnectError
+from rest_framework.exceptions import APIException
 ALBUMS_ENDPOINT = '/api/v1/albums/'
 
 
@@ -14,7 +15,10 @@ class MusicAlbumsGuideBackendClient:
 
     def get_albums(self, sorting: str) -> str:
         parameter = {'sorting': sorting}
-        response = httpx.get(self.url, params=parameter)
+        try:
+            response = httpx.get(self.url, params=parameter)
+        except ConnectError as exc:
+            raise APIException(exc)
         response.raise_for_status()
         return response.json()
 

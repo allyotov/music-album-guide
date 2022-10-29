@@ -14,8 +14,11 @@ logger = logging.getLogger(__name__)
 def get_albums(sorting=None):
     albums_client = Client(BACKEND_URL)
 
-    content_json = albums_client.get_albums(sorting=sorting)
-    
+    try:
+        content_json = albums_client.get_albums(sorting=sorting)
+    except APIException:
+        raise APIException('Нет ответа от бэкенда.')
+
     serializer = AlbumSerializer(data=content_json, many=True)
     if not serializer.is_valid():
         logger.debug(content_json)
