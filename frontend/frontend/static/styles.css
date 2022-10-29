@@ -1,0 +1,37 @@
+.table{
+    font-family: 'Trebuchet MS';
+    border-spacing: 0;
+    margin: 1rem;
+    background-color: #f5f5f5;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.table__caption{
+    font-size: 25px;
+    text-align: center;
+}
+
+.table__row:nth-child(even) {
+    background-color: #e5e5e5;
+}
+
+.table__header{
+    font-size: 20px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid rgb(24, 24, 24);
+}
+
+.table__cell{
+    font-style: normal;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+.table__error__header{
+    font-size: 20px;
+    text-align: left;
+    background-color: rgb(255, 42, 42);
+    border: 1px solid rgb(24, 24, 24);
+}

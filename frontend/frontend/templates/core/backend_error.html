@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Backend Error</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+</head>
+<body>
+    <table class="table">
+        <caption class="table__caption">Backend Error</caption>
+        <tr class="table__error__header">
+            <th class="table__cell">Error Message:</th>
+            <th class="table__cell">{{exc}}</th>
+        </tr>
+    </table>
+</body>
+</html>
+

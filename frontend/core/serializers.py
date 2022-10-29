@@ -9,10 +9,3 @@ class AlbumSerializer(serializers.Serializer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['artist@name'] = serializers.CharField()
-
-
-class AlbumInputSerializer(serializers.Serializer):
-    artist = serializers.CharField(required=True)
-    year = serializers.IntegerField(required=True)
-    name = serializers.CharField(required=True)
-    tracks = serializers.ListField(required=True)
