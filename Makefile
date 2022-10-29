@@ -17,7 +17,10 @@ backend.logs:
 	docker-compose logs backend
 
 backend.runserver:
-	docker-compose exec backend poetry run python manage.py runserver
+	docker-compose exec backend run python manage.py runserver
+
+frontend.runserver:
+	docker-compose exec frontend run python manage.py runserver
 
 rebuild.backend:
 	docker-compose up -d --no-deps --build backend
