@@ -22,4 +22,9 @@ shell:
 	poetry run python manage.py shell
 
 lint.core:
-	@flake8 core
+	@flake8 core/
+	@mypy core/
+
+lint.backend:
+	@flake8 backend/
+	@mypy backend/
