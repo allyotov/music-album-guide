@@ -16,17 +16,23 @@ postgres.logs:
 backend.logs:
 	docker-compose logs backend
 
-backend.runserver:
-	docker-compose exec backend run python manage.py runserver
+frontend.logs:
+	docker-compose logs frontend
 
-frontend.runserver:
-	docker-compose exec frontend run python manage.py runserver
+nginx.logs:
+	docker-compose logs nginx
+
+restart.nginx:
+	docker-compose restart nginx
+
+backend.collectstatic:
+	docker-compose exec backend python manage.py collectstatic
+
+frontend.collectstatic:
+	docker-compose exec frontend python manage.py collectstatic
 
 rebuild.backend:
 	docker-compose up -d --no-deps --build backend
-
-frontend.logs:
-	docker-compose logs frontend
 
 rebuild.frontend:
 	docker-compose up -d --no-deps --build frontend
