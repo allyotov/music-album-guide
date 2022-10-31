@@ -7,3 +7,11 @@ runserver:
 
 collectstatic:
 	poetry run python manage.py collectstatic
+
+lint.core:
+	@flake8 core/
+	@mypy core/
+
+lint.frontend:
+	@flake8 frontend/
+	@mypy frontend/
