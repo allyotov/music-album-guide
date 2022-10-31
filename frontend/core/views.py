@@ -1,7 +1,8 @@
 import logging
-from django.views import View
+
 from django.shortcuts import render
-from rest_framework.exceptions import APIException
+from django.views import View
+
 from core.services import get_albums
 
 logger = logging.getLogger(__name__)
