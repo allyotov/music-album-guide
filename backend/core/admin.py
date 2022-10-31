@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from core.models import Artist, Album, Track
+from core.models import Album, Artist, Track
 
 
 class ArtistAdmin(admin.ModelAdmin):

@@ -1,8 +1,7 @@
+from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
-from rest_framework import status
-
 
 from core.serializers import AlbumSerializer
 from core.services import get_album_queryset, save_album
