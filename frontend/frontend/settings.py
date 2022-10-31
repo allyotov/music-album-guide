@@ -30,7 +30,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = os.environ.get('FRONTEND_DJANGO_ALLOWED_HOSTS').split(' ')
 CSRF_TRUSTED_ORIGINS = os.environ.get('FRONTEND_DJANGO_CSRF_TRUSTED_ORIGINS').split(' ')
-
+logger.debug('CSRF_TRUSTED_ORIGINS: {0};'.format(', '.join(CSRF_TRUSTED_ORIGINS)))
 
 # Application definition
 
