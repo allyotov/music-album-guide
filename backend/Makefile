@@ -25,6 +25,6 @@ lint.core:
 	@flake8 core/
 	@mypy core/
 
-lint.frontend:
+lint.backend:
 	@flake8 backend/
 	@mypy backend/
