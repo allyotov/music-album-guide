@@ -116,6 +116,20 @@ uritemplate = ">=3.0.0"
 validation = ["swagger-spec-validator (>=2.1.0)"]
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -280,7 +294,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "6dc19f23c7c51c568b59d72f4a496ffe3f7d8280a532028c4f62dd03aba297d5"
+content-hash = "69b635270d9576a9af077c1ba6fb9a65df8eff57de2aec2ada4d0a19b37c6c6a"
 
 [metadata.files]
 asgiref = []
@@ -298,6 +312,7 @@ django = []
 django-filter = []
 djangorestframework = []
 drf-yasg = []
+gunicorn = []
 idna = []
 inflection = [
     {file = "inflection-0.5.1-py2.py3-none-any.whl", hash = "sha256:f38b2b640938a4f35ade69ac3d053042959b62a0f1076a5bbaa1b9526605a8a2"},
