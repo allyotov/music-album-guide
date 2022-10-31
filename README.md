@@ -35,7 +35,7 @@ make frontend.collecstatic
 ```bash
 make backend.collectstatic
 ```
-После выполнения второй команды в терминале будет отображен вопрос%
+После выполнения второй команды в терминале будет отображен вопрос:
 ***This will overwrite existing files!
 Are you sure you want to do this?***
 на него нужно ответить **yes**.
