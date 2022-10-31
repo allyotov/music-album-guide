@@ -1,17 +1,17 @@
 import logging
+from typing import Dict, List
 
-import httpx
 from rest_framework.exceptions import APIException
+
 from client.client import MusicAlbumsGuideBackendClient as Client
 from core.serializers import AlbumSerializer
 from frontend.settings import BACKEND_URL
-
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
-def get_albums(sorting=None):
+def get_albums(sorting=None) -> List[Dict]:
     albums_client = Client(BACKEND_URL)
 
     try:

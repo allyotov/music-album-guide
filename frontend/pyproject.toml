@@ -12,6 +12,8 @@ djangorestframework = "^3.14.0"
 gunicorn = "^20.1.0"
 
 [tool.poetry.dev-dependencies]
+mypy = "^0.982"
+wemake-python-styleguide = "^0.17.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

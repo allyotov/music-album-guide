@@ -13,7 +13,6 @@ import logging
 import os
 from pathlib import Path
 
-
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,8 +28,8 @@ SECRET_KEY = os.environ.get('FRONTEND_DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = os.environ.get("FRONTEND_DJANGO_ALLOWED_HOSTS").split(" ")
-CSRF_TRUSTED_ORIGINS=os.environ.get("FRONTEND_DJANGO_CSRF_TRUSTED_ORIGINS").split(" ")
+ALLOWED_HOSTS = os.environ.get('FRONTEND_DJANGO_ALLOWED_HOSTS').split(' ')
+CSRF_TRUSTED_ORIGINS = os.environ.get('FRONTEND_DJANGO_CSRF_TRUSTED_ORIGINS').split(' ')
 
 
 # Application definition
@@ -60,7 +59,7 @@ SETTINGS_PATH = os.path.normpath(os.path.dirname(__file__))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(SETTINGS_PATH, 'templates'),],
+        'DIRS': [os.path.join(SETTINGS_PATH, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -83,7 +82,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
 }
 
 
@@ -127,7 +126,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'core/static'),
 ]
 
-STATIC_ROOT =  os.path.join(BASE_DIR, "frontend/static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/static')
 
 
 # Default primary key field type
@@ -135,4 +134,4 @@ STATIC_ROOT =  os.path.join(BASE_DIR, "frontend/static")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BACKEND_URL = 'http://{}:{}'.format(os.environ['BACKEND_HOST'], os.environ['BACKEND_PORT'])
+BACKEND_URL = 'http://{0}:{1}'.format(os.environ['BACKEND_HOST'], os.environ['BACKEND_PORT'])
