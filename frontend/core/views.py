@@ -10,7 +10,6 @@ logging.basicConfig(level=logging.DEBUG)
 
 class AlbumTableView(View):
     def get(self, request):
-        logger.debug(get_albums(sorting='artist'))
         try:
             albums = get_albums(sorting='artist')
             return render(request, 'core/albums.html', context={'albums': albums})
@@ -23,5 +22,8 @@ class AlbumTableView(View):
             logger.debug(sorting)
         else:
             sorting = 'artist'
-        
-        return render(request, 'core/albums.html', context={'albums': get_albums(sorting=sorting)})
+        try:
+            albums = get_albums(sorting=sorting)
+            return render(request, 'core/albums.html', context={'albums': albums})
+        except Exception as exc:
+            return render(request, 'core/backend_error.html', context={'exc': exc})

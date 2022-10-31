@@ -19,4 +19,4 @@ COPY . /app
 # run entrypoint.sh
 ENTRYPOINT ["/app/entrypoint.sh"]
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"] 
